@@ -17,7 +17,11 @@ Do the following:
 
    HINT: no function required
 */
-
+const votingAge = 18
+ let age = 15
+ if (age>=votingAge){
+   console.log(true)
+ }
 
 
 /*
@@ -31,7 +35,12 @@ Do the following:
    HINT: no function required
 */
 
-
+let varOne = true
+ let varTwo = false
+ if (true){
+   varOne = varTwo
+ }
+ console.log(varOne)
 
 
 
@@ -46,7 +55,9 @@ Do the following:
    HINT: look up the Number method
 */
 
-
+let oneC = "1999"
+ oneC = Number(oneC)
+ console.log(oneC)
 
 
 /*
@@ -74,8 +85,9 @@ Do the following:
    3. Return the newly calculated age
 */
 
-function dogYears(/*add your code here*/){
-    /*add your code here*/
+function dogYears(age = 0){
+    let dogYears = age * 7
+    return dogYears
 }
 
 
@@ -107,9 +119,33 @@ Use the hungryDog function and feeding requirements below to do the following:
   NOTE: If done correctly, a weight of 15 lbs and age of 1 year would return 0.44999999999999996
 */  
 
-function hungryDog(/*add your code here*/){
-    /*add your code here*/
+function hungryDog(weight,age){
+  if (age >= 1){
+    if (weight <= 5){
+      return weight * .05
+    }
+    else if (weight > 1 && weight < 11){
+      return weight * .04
+    }
+    else if (weight > 10 && weight < 16){
+      return weight * .03
+    }
+    else{
+      return weight * .02
+    }
   }
+  else{
+    if (age < (5/12)){
+      return weight * .1
+    }
+    else if (age < (8/12) && age >= (4/12)){
+      return weight * .05
+    }
+    else if (age < 1 && age >= (7/12)){
+      return weight * .04
+    }
+  }
+}
 
 
 
@@ -135,7 +171,13 @@ Use the game function below to do the following:
 */
 
 function game(user, computer){
-    /*add your code here*/
+  if ((user == 'scissors' && computer == 'paper') || (user == 'rock' && computer == 'scissors') || (user == 'paper' && computer == 'rock')){
+    return 'you win!'
+  } else if ((computer == 'scissors' && user == 'paper') || (computer == 'rock' && user == 'scissors') || (computer == 'paper' && user == 'rock')){
+    return 'you lose!'
+  } else {
+    return 'it\'s a tie'
+  }
 }
   
   
@@ -151,8 +193,9 @@ Using the miles function below do the following:
   3. Return the number of miles
 */
 
-function miles(/*add your code here*/){
-    /*add your code here*/
+function miles(kilometers){
+    let miles = kilometers * 0.621371
+    return miles
   }
 
 
@@ -165,8 +208,9 @@ Using the feet function below do the following:
   3. Return number of feet
 */
 
-function feet(/*add your code here*/){
-    /*add your code here*/
+function feet(centimeters){
+  let feet = centimeters / 30.48
+  return feet
   }
  
 
@@ -181,8 +225,8 @@ Using the annoyingSong function below do the following:
       "{number} bottles of soda on the wall, {number} bottles of soda, take one down pass it around {number left over} bottles of soda on the wall"
 */
 
-function annoyingSong(/*add your code here*/){
-        /*add your code here*/
+function annoyingSong(number){
+  return number + " bottles of soda on the wall, " + number + " bottles of soda, take one down pass it around " + (number-1) + " bottles of soda on the wall"
   }
 
 
@@ -201,9 +245,19 @@ Using the grade function below do the following:
    below should return 'you got an F'
 */
   
-function grade(/*Your Code here */){
-  /*Your Code here */
+function grade(score){
+  if (score >= 90){
+    return 'you got an A'
+  } else if (score >= 80){
+    return 'you got a B'
+  } else if (score >= 70){
+    return 'you got a C'
+  } else if (score >= 60){
+    return 'you got a D'
+  } else {
+    return 'you got an F'
   }
+}
   
   
 
@@ -220,8 +274,13 @@ Using the vowelCounter function below do the following:
 */
 
 
-function vowelCounter(/*add your code here*/) {
-    /*add your code here*/
+function vowelCounter(string) {
+  let count = str.match(/[aeiou]/gi);
+  if (count == null){
+    return 0
+  } else{
+    return count.length
+  }
 }
 
 
